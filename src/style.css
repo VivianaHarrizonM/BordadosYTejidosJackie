@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary: #f7a8d3;       
+  --color-primary-light: #fdd5ed;  
+  --color-primary-dark: #d05fa8;   
+  --color-accent: #c03b8b;        
+  --color-neutral-light: #fdf7fb;  
+  --color-neutral: #f1f1f4;        
+  --color-text-dark: #3b2b35;      
+  --color-text-light: #7a6675;    
+  --color-white: #ffffff;
+
+  /* --------- Gradientes --------- */
+  --gradient-primary: linear-gradient(135deg, #fdd5ed, #f7a8d3);
+  --gradient-soft: linear-gradient(135deg, #fde6f5, #fdd5ed 70%, #fdf7fb);
+
+  /* --------- Sombras --------- */
+  --shadow-light: 0px 4px 12px rgba(243, 64, 213, 0.15);
+  --shadow-medium: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0px 6px 16px rgba(192, 59, 139, 0.25);
+
+  /* --------- Tipografía --------- */
+  --font-family: 'DM Sans', sans-serif;
+  --font-size-small: 0.875rem; /* 14px */
+  --font-size-normal: 1rem;    /* 16px */
+  --font-size-medium: 1.5rem;  /* 24px */
+  --font-size-large: 2.5rem;   /* 40px */
+
+  /* --------- Bordes --------- */
+  --radius-soft: 10px;
+  --radius-round: 20px;
+
+  /* --------- Espaciados --------- */
+  --spacing-section: 4rem; 
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-neutral-light);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  min-width: 320px;
+  height: auto;
+  background-color: var(--color-neutral-light);
+  padding: 0 1rem;
+}
+
+main section {
+  margin: var(--spacing-section) auto;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+p {
+  color: var(--color-text-light);
+}
+
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  main section {
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+}

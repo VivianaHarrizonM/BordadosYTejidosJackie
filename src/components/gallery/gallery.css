@@ -1,0 +1,145 @@
+
+.header-container{
+  position:sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-width: 320px;
+  padding: 10px 0;
+  background: var(--color-neutral-light);
+  box-shadow: 0 4px 8px var(--shadow-light);
+  border-bottom-left-radius: var(--radius-soft);
+  border-bottom-right-radius: var(--radius-soft);
+  z-index: 100;
+
+}
+
+.header--title {
+  font-size: clamp(1.8rem, 2.5vw, 2rem);
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: var(--color-neutral-light);
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(89, 30, 74, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--color-neutral-light);
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(89, 30, 74, 0.3);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.boton {
+  display: block;
+  width: clamp(140px, 20%, 180px);
+  padding: 0.8rem 1rem;
+  margin: 40px auto 0 auto;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.8rem;
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  transform: scale(1.05);
+}
+
+.boton span{
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: inherit;
+  vertical-align: text-bottom;
+}
+
+/* ----------- MEDIA QUERIES ----------- */
+
+/* Móviles */
+@media (max-width: 480px) {
+  .header--title {
+    font-size: 1.4rem;
+  }
+
+  .gallery {
+    gap: 15px;
+    padding: 30px 10px;
+  }
+
+  .boton {
+    font-size: 1.2rem;
+    width: 80%;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header--title {
+    font-size: 1.6rem;
+  }
+
+  .gallery {
+    gap: 18px;
+    padding: 35px 15px;
+  }
+
+  .boton {
+    font-size: 1.3rem;
+    width: 50%;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1024px) {
+  .header--title {
+    font-size: 1.8rem;
+  }
+
+  .gallery {
+    gap: 25px;
+    padding: 40px 20px;
+  }
+
+  .boton {
+    font-size: 1.4rem;
+    width: 180px;
+  }
+}
+
