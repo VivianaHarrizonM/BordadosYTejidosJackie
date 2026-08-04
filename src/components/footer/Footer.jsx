@@ -14,7 +14,7 @@ return (
               className="contact-link"
             >
               <img src="/assets/icons/smartphone.png" alt="WhatsApp" />
-              427 141 6322
+              WhatsApp
             </a>
           </li>
           <li>
@@ -26,6 +26,17 @@ return (
             >
               <img src="/assets/icons/facebook.png" alt="Facebook" />
               Facebook
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.tiktok.com/@bordadosytejidosjackie"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              <img src="/assets/icons/tiktok.png" alt="TikTok" />
+              TikTok
             </a>
           </li>
         </ul>

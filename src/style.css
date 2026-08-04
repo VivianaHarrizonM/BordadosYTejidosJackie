@@ -1,38 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
 
 :root {
-  --color-primary: #f7a8d3;       
-  --color-primary-light: #fdd5ed;  
-  --color-primary-dark: #d05fa8;   
-  --color-accent: #c03b8b;        
-  --color-neutral-light: #fdf7fb;  
-  --color-neutral: #f1f1f4;        
-  --color-text-dark: #3b2b35;      
-  --color-text-light: #7a6675;    
+  /* --------- Paleta --------- */
+  --color-primary: #f7a8d3;
+  --color-primary-light: #fde3f2;
+  --color-primary-dark: #d0529f;
+  --color-accent: #ad2c74;
+  --color-accent-deep: #7a1f54;
+  --color-neutral-light: #fdf7fb;
+  --color-neutral: #f6eef3;
+  --color-text-dark: #3b2035;
+  --color-text-light: #7a6675;
   --color-white: #ffffff;
+  --color-gold: #c9974b;
 
   /* --------- Gradientes --------- */
-  --gradient-primary: linear-gradient(135deg, #fdd5ed, #f7a8d3);
-  --gradient-soft: linear-gradient(135deg, #fde6f5, #fdd5ed 70%, #fdf7fb);
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  --gradient-soft: linear-gradient(135deg, #fde6f5, #fdd5ed 60%, #fdf7fb);
+  --gradient-cta: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
 
   /* --------- Sombras --------- */
-  --shadow-light: 0px 4px 12px rgba(243, 64, 213, 0.15);
-  --shadow-medium: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  --shadow-hover: 0px 6px 16px rgba(192, 59, 139, 0.25);
+  --shadow-light: 0px 4px 14px rgba(173, 44, 116, 0.18);
+  --shadow-medium: 0px 6px 18px rgba(59, 32, 53, 0.14);
+  --shadow-hover: 0px 10px 26px rgba(122, 31, 84, 0.28);
 
   /* --------- Tipografía --------- */
   --font-family: 'DM Sans', sans-serif;
-  --font-size-small: 0.875rem; /* 14px */
-  --font-size-normal: 1rem;    /* 16px */
-  --font-size-medium: 1.5rem;  /* 24px */
-  --font-size-large: 2.5rem;   /* 40px */
+  --font-display: 'Fraunces', 'DM Sans', serif;
+  --font-size-small: 0.875rem;
+  --font-size-normal: 1rem;
+  --font-size-medium: 1.5rem;
+  --font-size-large: 2.5rem;
 
   /* --------- Bordes --------- */
-  --radius-soft: 10px;
-  --radius-round: 20px;
+  --radius-soft: 14px;
+  --radius-round: 26px;
+  --radius-pill: 999px;
 
   /* --------- Espaciados --------- */
-  --spacing-section: 4rem; 
+  --spacing-section: 4rem;
 }
 
 
@@ -46,6 +52,17 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -71,6 +88,31 @@ main section {
 }
 
 
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.main-exchange-container-title h2::after,
+.product-detail--title h2::after,
+.plans--title h2::after,
+.header--title-container h1::after,
+.header--title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 16px auto 0;
+  border-radius: 2px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-accent) 0px,
+    var(--color-accent) 8px,
+    transparent 8px,
+    transparent 14px
+  );
+}
 
 p {
   color: var(--color-text-light);
@@ -85,6 +127,13 @@ a {
 a:hover {
   color: var(--color-accent);
   text-decoration: underline;
+}
+
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 

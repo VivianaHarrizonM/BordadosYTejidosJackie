@@ -3,8 +3,7 @@ import './header.css';
 
 const Header = () => {
   const location = useLocation();
-
-  const hideButtonRoutes = ["/gallery", "/accesorios", "/amigurumis"];
+  const hideButtonRoutes = ["/gallery", "/gallery-accesorios", "/gallery-amigurumi"];
   const shouldHideButton = hideButtonRoutes.includes(location.pathname);
 
   return (
@@ -16,13 +15,12 @@ const Header = () => {
           En Bordados Jackie, combinamos creatividad y pasión para ofrecer piezas
           únicas en bordados y tejidos.
         </p>
-      
-          {!shouldHideButton && (
+
+        {!shouldHideButton && (
           <Link to="/gallery" className="header--button">
             Descubre más
           </Link>
         )}
-        
       </div>
     </header>
   );

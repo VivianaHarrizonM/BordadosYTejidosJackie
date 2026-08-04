@@ -5,7 +5,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-deep));
   padding: 20px 40px;
   color: var(--color-white);
   box-shadow: var(--shadow-medium);
@@ -25,9 +25,11 @@ footer section {
 
 .footer-left h4 {
   font-size: 1.8rem;
-  color: var(--color-text-dark);
+  font-family: var(--font-display);
+  color: var(--color-white);
   margin-bottom: 10px;
 }
+
 
 .footer-left ul {
   list-style: none;
@@ -42,9 +44,23 @@ footer section {
 }
 
 .footer-left li img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  padding: 6px;
+  background: var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(59, 43, 53, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-left li img[alt="TikTok"] {
+  filter: invert(1);
+}
+
+.contact-link:hover img {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 5px 12px rgba(59, 43, 53, 0.35);
 }
 
 .contact-link {
@@ -53,20 +69,14 @@ footer section {
   text-decoration: none;
   font-size: 1.4rem;
   font-weight: 500;
-  color: var(--color-text-light);
+  color: var(--color-white);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.contact-link img {
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
-  filter: brightness(0) invert(1);
-}
-
 .contact-link:hover {
-  color: rgb(58, 58, 58);
+  color: var(--color-primary-light);
   transform: translateX(3px);
+  transition: transform 0.3s ease;
 }
 
 
@@ -78,9 +88,10 @@ footer section {
 
 .footer-logo {
   width: 110px;
-  height: auto;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
   filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
-  border-radius: 60px;
 }
 
 /* -------- Responsivo -------- */
@@ -96,12 +107,15 @@ footer section {
   .footer-left h4 {
     font-size: 1.3rem;
   }
-
+  .footer-left li {
+    justify-content: center;
+  }
   .contact-link {
     font-size: 1.1rem;
   }
 
   .footer-logo {
     width: 80px;
+    height: 80px;
   }
 }

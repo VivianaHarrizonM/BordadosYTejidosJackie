@@ -4,6 +4,7 @@
   padding: 80px 1rem 30px;
   text-align: center;
   background: var(--color-white);
+  border-radius: 2%;
 }
 
 .background-img {
@@ -15,7 +16,7 @@
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 50%;
-  box-shadow: var(--shadow-white);
+  box-shadow: var(--shadow-light);
 }
 
 .main-exchange-container-title {
